@@ -138,7 +138,7 @@ function template_main()
 			{
 				echo '
 				<tr id="board_', $board['id'], '" >
-					<td class="echoneing"  ', !empty($board['children']) ? ' rowspan="2"' : '', '>
+					<td ', !empty($board['children']) ? ' rowspan="2"' : '', '>
 						<a href="', ($board['is_redirect'] || $context['user']['is_guest'] ? $board['href'] : $scripturl . '?action=unread;board=' . $board['id'] . '.0;children'), '">';
 
 				// If the board or children is new, show an indicator.
@@ -230,27 +230,26 @@ function template_main()
 			</tbody>';
 		}
 	}
-	echo '
-		</table>
-	</div>';
+	echo '';
 
 	if ($context['user']['is_logged'])
 	{
 		echo '
 	<div id="posting_icons" class="floatleft">';
 
-		// Mark read button.
-		$mark_read_button = array(
-			'markread' => array('text' => 'mark_as_read', 'image' => 'markread.gif', 'lang' => true, 'url' => $scripturl . '?action=markasread;sa=all;' . $context['session_var'] . '=' . $context['session_id']),
-		);
-
 		echo '
-			<ul class="nav-justified ulsinpuntos">
+		<tbody class="divider">
+				<tr>
+					<td colspan="4">
+					<div align="center">
+								<ul class="nav-justified ulsinpuntos">
 				<li><span class="avatar avatar-brand-accent avatar-xs mdc-bg-blue-700 mdc-text-grey-50" style="display:inline-block;" ><span class="icon">android</span></span>&nbsp;', $txt['new_posts'], '</li>
 				<li><span class="avatar avatar-xs mdc-bg-blue-grey-300 mdc-text-grey-50" style="display:inline-block;"><span class="icon">android</span></span>&nbsp;', $txt['old_posts'], '</li>
 				<li><span class="avatar avatar-brand avatar-xs mdc-bg-cyan-700 mdc-text-grey-50" style="display:inline-block;" > <span class="icon">subdirectory_arrow_right</span></span>&nbsp;', $txt['redirect_board'], '</li>
-			</ul>
-		
+
+			</ul></div></td>
+				</tr>
+			</tbody>		
 	</div>';
 
 		// Show the mark all as read button?
@@ -260,14 +259,22 @@ function template_main()
 	else
 	{
 		echo '
-	<div id="posting_icons">
-		<ul class="nav-justified ulsinpuntos">
-			<li><span class="avatar avatar-xs mdc-bg-blue-grey-300 mdc-text-grey-50" style="display:inline-block;"><span class="icon">android</span></span>&nbsp;', $txt['old_posts'], '</li>
-			<li><span class="avatar avatar-brand avatar-xs mdc-bg-cyan-700 mdc-text-grey-50" style="display:inline-block;" > <span class="icon">subdirectory_arrow_right</span></span>&nbsp;', $txt['redirect_board'], '</li>
-		</ul>
+		<tbody class="divider">
+				<tr>
+					<td colspan="4">
+					<div align="center">
+								<ul class="nav-justified ulsinpuntos">
+				<li><span class="avatar avatar-brand-accent avatar-xs mdc-bg-blue-700 mdc-text-grey-50" style="display:inline-block;" ><span class="icon">android</span></span>&nbsp;', $txt['new_posts'], '</li>
+				<li><span class="avatar avatar-xs mdc-bg-blue-grey-300 mdc-text-grey-50" style="display:inline-block;"><span class="icon">android</span></span>&nbsp;', $txt['old_posts'], '</li>
+				<li><span class="avatar avatar-brand avatar-xs mdc-bg-cyan-700 mdc-text-grey-50" style="display:inline-block;" > <span class="icon">subdirectory_arrow_right</span></span>&nbsp;', $txt['redirect_board'], '</li>
+			</ul></div></td>
+				</tr>
+			</tbody>	
 	</div>';
 	}
-
+echo '
+		</table>
+	</div>';
 	template_info_center();
 }
 
