@@ -138,7 +138,7 @@ function template_main()
 			{
 				echo '
 				<tr id="board_', $board['id'], '" >
-					<td ', !empty($board['children']) ? ' rowspan="2"' : '', '>
+					<td class="echoneing"  ', !empty($board['children']) ? ' rowspan="2"' : '', '>
 						<a href="', ($board['is_redirect'] || $context['user']['is_guest'] ? $board['href'] : $scripturl . '?action=unread;board=' . $board['id'] . '.0;children'), '">';
 
 				// If the board or children is new, show an indicator.
@@ -229,12 +229,6 @@ function template_main()
 		echo '
 			</tbody>';
 		}
-		echo '
-			<tbody class="divider">
-				<tr>
-					<td colspan="4"></td>
-				</tr>
-			</tbody>';
 	}
 	echo '
 		</table>
