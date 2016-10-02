@@ -287,10 +287,15 @@ function template_info_center()
 
 	// Here's where the "Info Center" starts...
 	echo '
-    <div class="row">
-    	<div class="col-xs-12">
+	<div class="table-responsive">
+		<table class="table table-hover table-strip">
+		<thead class="cat_bar">
+		<tr>
+					<td colspan="4">
     		<div><h3 class="sinmargen"><span id="upshrink_ic" class="icon">expand_more</span>', sprintf($txt['info_center_title'], $context['forum_name_html_safe']), '</h3></div>
 		</div>
+		</td>
+		</tr></thead>
 		<div class="col-xs-12">
 			<div class="container">
 				<div id="upshrinkHeaderIC"', empty($options['collapse_header_ic']) ? '' : ' style="display: none;"', '>';
@@ -403,6 +408,7 @@ function template_info_center()
 							</p>
 						</div>
 					</div>
+					</div>
 		';
 	}
 
@@ -477,7 +483,7 @@ function template_info_center()
 
 
 
-	echo'
+	echo'</table>
 				</div>
 			</div>
 		</div>
