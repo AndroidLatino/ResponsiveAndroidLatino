@@ -5,13 +5,18 @@ function template_info_center()
 
 	// Here's where the "Info Center" starts...
 	echo '
-						<div class="card">
-						<aside class="card-side pull-left"> <i class="material-icons">info</i> </aside>
-							<div class="card-main">
-							<div classs="card-header"><h3>Panel de Información</h3></div>
-								<nav class="tab-nav tab-nav-brand margin-top-no">
-									<ul class="nav nav-justified">
-										<li class="active">', empty($options['collapse_header_ic']) ? '' : ' style="display: none;"', '>';
+	<div class="table-responsive">
+		<table class="table table-hover table-strip">
+		<thead class="cat_bar">
+		<tr>
+					<td colspan="4">
+    		<div><h3 class="sinmargen"><span id="upshrink_ic" class="icon">expand_more</span>', sprintf($txt['info_center_title'], $context['forum_name_html_safe']), '</h3></div>
+		</div>
+		</td>
+		</tr></thead>
+		<div class="col-xs-12">
+			<div class="container">
+				<div id="upshrinkHeaderIC"', empty($options['collapse_header_ic']) ? '' : ' style="display: none;"', '>';
 
 	// This is the "Recent Posts" bar.
 	if (!empty($settings['number_recent_posts']) && (!empty($context['latest_posts']) || !empty($context['latest_post'])))
@@ -194,4 +199,8 @@ function template_info_center()
 	}
 
 
-?>
+//Codigo de mark as read, por las dudas
+		// Mark read button.
+		$mark_read_button = array(
+			'markread' => array('text' => 'mark_as_read', 'image' => 'markread.gif', 'lang' => true, 'url' => $scripturl . '?action=markasread;sa=all;' . $context['session_var'] . '=' . $context['session_id']),
+		);
