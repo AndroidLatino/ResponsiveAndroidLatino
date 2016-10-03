@@ -284,7 +284,55 @@ echo '
 function template_info_center()
 {
 	global $context, $settings, $options, $txt, $scripturl, $modSettings;
-
+		echo '						<div class="card">
+							<div class="card-main">
+							<div classs="card-header"><div class="container"><h3><i class="material-icons">info</i>', sprintf($txt['info_center_title'], $context['forum_name_html_safe']), '</h3></div>
+								<nav class="tab-nav tab-nav-brand margin-top-no">
+									<ul class="nav nav-justified">
+										<li class="active">
+											<a class="waves-attach" data-toggle="tab" href="#tab_posts">FUCCCCCCCCC</a>
+										</li>
+										<li>
+											<a class="waves-attach" data-toggle="tab" href="#tab_calendario">BOI</a>
+										</li>
+										<li>
+											<a class="waves-attach" data-toggle="tab" href="#tab_actividad">YO DAB</a>
+										</li>
+										<li>
+											<a class="waves-attach" data-toggle="tab" href="#tab_aidonnou">4th tab</a>
+										</li>
+									</ul>
+								</nav>
+								<div class="card-inner">
+									<div class="tab-content">
+										<div class="tab-pane fade active in" id="tab_posts">
+											<p><code>.tab-nav-brand</code><br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+										</div>
+										<div class="tab-pane fade" id="tab_calendario">
+											<p>Another Tab. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+										</div>
+										<div class="tab-pane fade" id="tab_aidonnou">
+											<p>Third Tab.</p>
+										</div>
+										<div class="tab-pane fade" id="tab_actividad">
+											<p>Third Tab.</p>
+										</div>
+										</div>
+										</div>
+									</div>
+							</div>
+						</div>
+<br> <br> <br>';
 	// Here's where the "Info Center" starts...
 	echo '
 	<div class="table-responsive">
@@ -307,7 +355,7 @@ function template_info_center()
 				
 					<div class="row">
 						<div class="col-xs-12">
-							<h4 class="sinmargen"><a href="', $scripturl,'?action=recent" ><span class="icon">note</span></a>', $txt['recent_posts'], '</h4>				
+							<h4 class="sinmargen"><a href="', $scripturl,'?action=recent" ><span class="icon">note</span></a>', $txt['recent_posts'],  '</h4>				
 						</div>
 
 				
