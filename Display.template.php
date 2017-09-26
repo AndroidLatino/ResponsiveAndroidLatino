@@ -345,7 +345,7 @@ function template_main()
 				echo '
 									<li class="postcount hidden-xx hidden-xs">', $txt['member_postcount'], ': ', $message['member']['posts'], '</li>';
 
-			// Is karma display enabled?  Total or +/-?
+// Is karma display enabled?  Total or +/-?
 			if ($modSettings['karmaMode'] == '1')
 				echo '
 									<li class="karma">', $modSettings['karmaLabel'], ' ', $message['member']['karma']['good'] - $message['member']['karma']['bad'], '</li>';
