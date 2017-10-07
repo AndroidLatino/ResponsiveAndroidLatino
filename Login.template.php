@@ -89,6 +89,7 @@ function template_login()
                 <input type="submit" value="', $txt['login'], '" class="pull-left sinborde form-control form-control-inline btn btn-flat btn-brand button_submit" />
                 <a class="pull-right btn btn-flat btn-brand " href="', $scripturl, '?action=reminder">', $txt['forgot_your_password'], '</a>
                 <input type="hidden" name="hash_passwrd" value="" />
+                <input type="hidden" name="', $context['session_var'], '" value="', $context['session_id'], '" />
               </div>
                   <span class="lowerframe"><span></span></span>
               </div>
@@ -164,6 +165,7 @@ function template_kick_guest()
 			</div>
 			<span class="lowerframe"><span></span></span>
 			<input type="hidden" name="hash_passwrd" value="" />
+			<input type="hidden" name="', $context['session_var'], '" value="', $context['session_id'], '" />
 		</div>
 	</form>';
 
@@ -210,6 +212,7 @@ function template_maintenance()
 		</div>
 		<span class="lowerframe"><span></span></span>
 		<input type="hidden" name="hash_passwrd" value="" />
+		<input type="hidden" name="', $context['session_var'], '" value="', $context['session_id'], '" />
 	</div>
 </form>';
 }
